@@ -2,58 +2,34 @@
 
 **Research Implementation for AICCSA 2025**
 
-This repository contains the complete implementation of our research paper "Beyond Stars: Bridging the Gap Between Ratings and Review Sentiment with LLM" published in AICCSA 2025. Our framework addresses the fundamental limitations of traditional star-rating systems by developing an advanced LLM-based approach to mobile app review analysis that captures nuanced feedback often missed by numeric ratings alone.
+This repository contains the complete implementation of research paper "Beyond Stars: Bridging the Gap Between Ratings and Review Sentiment with LLM" published in AICCSA 2025. 
+The framework addresses the fundamental limitations of traditional star-rating systems by developing an advanced LLM-based approach to app review analysis that captures nuanced feedback often missed by numeric ratings alone.
 
-## 🎯 Research Objectives
+## Research Objectives
 
 Our research tackles the critical challenge that **star ratings fail to represent the nuanced feedback present in review texts**. While a 5-star rating appears positive, the accompanying text might reveal significant concerns about specific app features. Our LLM framework bridges this gap by:
 
-- **Extracting Rich Insights**: Moving beyond surface-level ratings to understand detailed user experiences
-- **Capturing Linguistic Nuances**: Handling sarcasm, domain-specific terminology, and contextual sentiment
-- **Providing Actionable Feedback**: Delivering feature-level recommendations for app improvement
-- **Enabling Interactive Analysis**: Supporting conversational exploration of review insights
+- **Extracting Rich Insights**
+- **Capturing Linguistic Nuances**
+- **Providing Actionable Feedback**
+- **Enabling Interactive Analysis**
 
-## 🔬 Research Framework
+## Framework Description:
+Core Architecture: The framework is a modular, hybrid multi-stage pipeline where each component can operate independently or together. It combines traditional NLP baselines with advanced LLM techniques for comprehensive app review analysis.
+- **M1 - Discrepancy Analysis (Baseline)** - Uses VADER sentiment analyzer to quantify misalignment between star ratings and review text sentiment by mapping VADER scores to 1-5 star scale and computing absolute differences.
+- **M2 - ABSA with Recommendation Mining** - Employs structured prompting with domain-specific examples to extract aspect-sentiment-recommendation triples.
+- **M3 - LLM-Enhanced Topic Modeling** - Combines BERTopic clustering with intelligent LLM-generated topic labels and summaries from keyword clusters.
+- **M4 - RAG-Based Conversational QA**: Interactive evidence-backed conversational question answering over large review datasets.
 
-Our modular LLM framework implements a three-component system validated on AWARE, Google Play, and Spotify datasets:
-
-- **M1 - Statistical Baseline**: VADER sentiment analysis for comparison benchmarking  
-- **M2 - ABSA with Recommendations**: Advanced aspect-sentiment extraction using structured prompting
-- **M3 - LLM-Enhanced Topic Modeling**: BERTopic clustering with intelligent LLM-generated labels
-- **M4 - RAG-Based Conversational QA**: Interactive question-answering over review corpus
-
-## 📊 Research Contributions & Results
-
-### 🏆 **Performance Achievements**
-- **5.1% F1-score improvement** in aspect extraction over fine-tuned DeBERTa-v3-large
-- **Enhanced topic coherence**: Silhouette scores improved from -0.0313 to 0.0302 with LLM integration
-- **Perfect retrieval diversity (100%)** with high relevance scores (cosine similarity: 0.618-0.754)
-- **Quantified rating-sentiment gaps** across all datasets, revealing systematic discrepancies
-
-### 🔬 **Technical Innovations**
-- **Multi-LLM Architecture**: GPT-4, LLaMA 2 7B-chat, and Mistral 7B with unified interfaces
-- **Automated Prompt Optimization**: Self-improving prompts with consistency checks and rule-based heuristics  
-- **Structured Prompting**: Domain-aware prompt engineering for enhanced contextual understanding
-- **Hybrid Approach**: Combines traditional NLP strengths with LLM contextual reasoning
-
-## ✨ Key Features
-
-### 🔧 Multi-LLM Architecture
+### Multi-LLM Architecture
 - **GPT-4/4o**: Primary model for complex reasoning and structured outputs
 - **LLaMA 2 7B-chat**: Open-source alternative for accessibility and comparison
 - **Mistral 7B**: High-performance model with efficient resource usage
 - **Unified Interface**: Seamless switching between providers via standardized ChatFn interface
 
-### 📊 Research-Validated Capabilities
-- **Advanced ABSA**: Extract aspects, sentiments, and actionable recommendations using structured prompting
-- **Intelligent Topic Discovery**: BERTopic clustering enhanced with LLM-generated labels and summaries
-- **Interactive Review Analysis**: RAG-based conversational system for dynamic insight exploration
-- **Automated Quality Assurance**: Self-evaluating prompts with consistency validation and optimization
 
-### 🛠️ Research-Grade Features
-- **Multi-Dataset Validation**: Tested on AWARE, Google Play, and Spotify review corpora
-- **Performance Benchmarking**: Systematic comparison against fine-tuned transformer models
-- **Reproducible Results**: Deterministic outputs with comprehensive evaluation metrics
+### Multi-Dataset Validation**: 
+- Tested on AWARE, Google Play, and Spotify review corpora
 - **Scalable Architecture**: Handles datasets from samples to 80K+ reviews with intelligent caching
 
 ## 🚀 Quick Start
@@ -152,107 +128,18 @@ aiccsa2025-llm-app-review-analysis/      # Repository root
 
 ### 1. 🧹 Data Preprocessing
 
-First, clean and prepare your review data:
+First, clean and prepare your review dataset stored in data folder by app_reviews_pipeline/ running preprocessing.py
 
-```bash
-cd app_reviews_pipeline
-python preprocessing.py
-```
 
-**Interactive Options:**
-- Select datasets: AWARE, Spotify, Google Play
-- Choose processing parameters
-- View cleaning statistics
 
 **Output:** Clean CSV files in `data/processed/` with statistics summaries.
-
-### 2. 📊 M1 - Discrepancy Analysis
-
-Analyze sentiment discrepancies using VADER:
-
-```bash
-cd M1_Discrepancy
-python discrepancy.py
-```
-
-**Features:**
-- Statistical sentiment analysis
-- Cross-dataset comparison
-- Visualization generation
-
-### 3. 💝 M2 - ABSA Recommendation
-
-Extract aspects, sentiments, and recommendations:
-
-```bash
-cd M2_Absa_recommendation
-python absa_recommendation.py
-```
 
 **Interactive Flow:**
 1. Choose dataset (AWARE, Spotify, Google Play)
 2. Select LLM provider and model
 3. Set sample size or use full dataset
-4. Get structured ABSA output with quality scores
 
-**Example Output:**
-```json
-{
-  "review_id": "abc123",
-  "aspects": ["app-stability", "user-interface"],
-  "sentiments": {"app-stability": "Negative", "user-interface": "Positive"},
-  "recommendations": ["Fix crash issues", "Maintain clean design"]
-}
-```
 
-### 4. 🏷️ M3 - Topic Modeling
-
-Discover key themes with LLM-enhanced labeling:
-
-```bash
-cd M3_Topic_modeling
-python topic_modeling.py
-```
-
-**Process:**
-1. BERTopic clustering with optimized HDBSCAN parameters
-2. LLM-generated topic labels and summaries
-3. Quality assessment (coherence, distinctiveness)
-4. Example reviews for each topic
-
-**Output:** Comprehensive topic analysis with quality scores 6.4-8.6+
-
-### 5. 🤖 M4 - RAG Question Answering
-
-Interactive Q&A over your review corpus:
-
-```bash
-cd M4_Rag_qa
-python rag_qa.py
-```
-
-**Sample Questions:**
-```
-# Summary queries (triggers overview mode)
-summary: overall themes in the reviews
-overview of recurring complaints and praise
-
-# Specific queries
-what stability issues do users report most often?
-what are the main frustrations with ads?
-which features do users request most?
-
-# Comparative analysis
-summary: top 5 complaints (spotify dataset)
-how do users feel about the latest update?
-```
-
-**Features:**
-- Semantic search with FAISS indexing
-- Evidence-based answers with review citations
-- Actionable insights generation
-
-## 🔧 Advanced Configuration
 
 ### LLM Provider Setup
 
@@ -267,168 +154,14 @@ providers = {
 }
 ```
 
-### Quality Evaluation System
-
-Automatic quality assessment for all LLM outputs:
-
-- **ABSA Quality**: Aspect completeness, sentiment accuracy, recommendation actionability
-- **Topic Quality**: Coherence scores, distinctiveness metrics, label clarity
-- **Prompt Optimization**: Automated prompt tuning based on evaluation feedback
-
-### Caching System
-
-Intelligent caching for performance optimization:
-
-- **Embeddings**: Sentence transformer vectors cached per dataset
-- **Processed Data**: Clean datasets with incremental updates
-- **Prompts**: Optimized prompts saved per model/dataset combination
-
-## 📈 Performance & Scalability
-
-### 📈 Research Validation & Benchmarks
-
-| **Metric** | **Traditional Method** | **Our LLM Framework** | **Improvement** |
-|------------|----------------------|----------------------|-----------------|
-| Aspect Extraction F1 | DeBERTa-v3-large | GPT-4 + Structured Prompting | **+5.1%** |
-| Topic Coherence | BERTopic alone (-0.0313) | LLM-Enhanced BERTopic (+0.0302) | **+0.0615** |
-| QA Retrieval Diversity | Traditional RAG | Our RAG System | **100%** |
-| Cosine Similarity | - | 0.618-0.754 | **High Relevance** |
-
 ### 🎯 Research Impact
 - **Academic Contribution**: Novel LLM framework surpassing fine-tuned transformer baselines
 - **Practical Value**: Actionable insights for app developers beyond star ratings
 - **Methodological Innovation**: Structured prompting approach with automated optimization
 - **Scalable Solution**: Framework applicable across different app domains and review platforms
 
-## 🛡️ Quality Assurance
 
-The framework includes comprehensive quality control:
-### Automated Quality Checks
-
-- **ABSA Output Validation**: Completeness and accuracy scoring
-- **Topic Coherence Assessment**: Statistical and LLM-based evaluation
-- **Recommendation Actionability**: Practical utility scoring
-- **JSON Parsing Robustness**: Handles LLM output variations (markdown code blocks, etc.)
-
-### Error Handling
-
-- **Graceful Degradation**: System continues with warnings on non-critical failures
-- **Retry Logic**: Automatic retry for transient API failures
-- **Validation Pipeline**: Multi-stage validation of all outputs
-
-## 🤝 Contributing
-
-We welcome contributions! Here's how to get started:
-
-### Development Setup
-
-1. **Fork and clone:**
-```bash
-git fork https://github.com/yourusername/aiccsa2025-llm-app-review-analysis.git
-git clone your-fork-url
-cd aiccsa2025-llm-app-review-analysis
-```
-
-2. **Create development environment:**
-```bash
-python -m venv venv
-source venv/bin/activate  # or venv\Scripts\activate on Windows
-pip install -r requirements.txt
-pip install -e .  # editable install
-```
-
-3. **Run tests:**
-```bash
-python -m pytest tests/
-```
-
-### Contribution Guidelines
-
-- **Code Style**: Follow PEP 8, use black formatter
-- **Documentation**: Update docstrings and README for new features
-- **Testing**: Add tests for new functionality
-- **Issues**: Check existing issues before creating new ones
-
-### Areas for Contribution
-
-- 🔌 **New LLM Providers**: Add support for additional LLM APIs
-- 📊 **Visualization**: Enhanced plotting and dashboard features  
-- 🎯 **Domain Adaptation**: Specialized prompts for different app categories
-- ⚡ **Performance**: Optimization for larger datasets
-- 🧪 **Evaluation Metrics**: New quality assessment methods
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 📚 Citation
 
 If you use this framework in your research, please cite our AICCSA 2025 paper:
-
-```bibtex
-@inproceedings{zuhir2025beyond,
-  author = {Najla Zuhir and Amna Mohammad Salim and Parvathy Premkumar and Md Moshiur Farazi},
-  title = {Beyond Stars: Bridging the Gap Between Ratings and Review Sentiment with LLM},
-  booktitle = {Proceedings of the IEEE/ACS International Conference on Computer Systems and Applications (AICCSA)},
-  year = {2025},
-  organization = {IEEE},
-  institution = {University of Doha for Science and Technology, College of Computing \& Information Technology},
-  url = {https://github.com/yourusername/app-reviews-llm-analysis-main}
-}
-```
-
-## 👥 Research Team
-
-**University of Doha for Science and Technology**  
-*College of Computing & Information Technology*
-
-- **Najla Zuhir** - Lead Researcher
-- **Amna Mohammad Salim** - Co-Researcher  
-- **Parvathy Premkumar** - Co-Researcher
-- **Md Moshiur Farazi** - Co-Researcher
-
-## 🙏 Acknowledgments
-
-### Core Technologies
-- **[BERTopic](https://github.com/MaartenGr/BERTopic)**: Advanced topic modeling capabilities
-- **[FAISS](https://github.com/facebookresearch/faiss)**: Efficient similarity search and clustering
-- **[Sentence Transformers](https://www.sbert.net/)**: State-of-the-art sentence embeddings
-- **[VADER](https://github.com/cjhutto/vaderSentiment)**: Lexicon-based sentiment analysis
-
-### LLM Providers
-- **OpenAI**: GPT-4o and GPT-4o-mini API access
-- **Mistral AI**: High-quality open-source model alternatives
-- **Meta**: LLaMA 2 models for research applications
-
-### Research Community
-- **AICCSA 2025** - IEEE/ACS International Conference on Computer Systems and Applications
-- **University of Doha for Science and Technology** - Institutional support and resources
-- Thanks to all contributors and researchers advancing computational linguistics and sentiment analysis
-
----
-
-## 🏗️ Research Architecture
-
-```mermaid
-flowchart TD
-    A[App Review Corpus] --> B[Multi-Dataset Preprocessing]
-    B --> C{LLM Framework Selection}
-    C -->|Baseline| D[M1: VADER Analysis]
-    C -->|Research Focus| E[M2: ABSA + Recommendations]
-    C -->|Innovation| F[M3: LLM-Enhanced Topic Modeling]
-    C -->|Application| G[M4: RAG-Based QA]
-    H[Multi-LLM Providers<br/>GPT-4, LLaMA 2, Mistral] --> E
-    H --> F
-    H --> G
-    I[Automated Quality Evaluation] --> E
-    I --> F
-    J[Structured Prompt Optimization] --> E
-    J --> F
-    J --> G
-    K[Performance Benchmarking] --> L[Research Validation]
-    E --> K
-    F --> K
-    G --> K
-```
-
-**Ready to explore beyond star ratings? Start with our [Quick Start](#-quick-start) guide and discover the hidden insights in app reviews!** 🚀
