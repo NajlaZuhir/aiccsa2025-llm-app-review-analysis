@@ -63,7 +63,7 @@ LLAMA_API_KEY=...
 
 ---
 
-## 📁 Core Architecture (Project Structure)
+## 📁 Project Structure (Core Architecture)
 
 ```
 aiccsa2025-llm-app-review-analysis/      # Repository root
