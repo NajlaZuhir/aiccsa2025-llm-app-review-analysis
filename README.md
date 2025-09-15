@@ -138,15 +138,15 @@ python app_reviews_pipeline/preprocessing.py
 ```
 **Output:** Clean CSVs in `data/processed/` + summary stats in `*_stats.json`.
 
-**Interactive Flow (when using `run_pipeline.py`):**
-1. Choose dataset (AWARE, Spotify, Google Play)  
-2. Select LLM provider and model  
-3. Set sample size or use full dataset
-
-### 2) ▶️ Run the full pipeline (interactive)
+### 2) ▶️ Run the full pipeline (Interactive Flow)
 ```bash
 python app_reviews_pipeline/run_pipeline.py
 ```
+**Interactive Flow:**
+1. Choose dataset (AWARE, Spotify, Google Play)  
+2. Select LLM provider and model  
+3. Set sample size or use full dataset
+   
 **Note:** you can also run individual modules.
 
 ---
