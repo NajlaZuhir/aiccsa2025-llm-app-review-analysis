@@ -147,28 +147,7 @@ python app_reviews_pipeline/preprocessing.py
 ```bash
 python app_reviews_pipeline/run_pipeline.py
 ```
-
-### 3) Run individual modules
-
-- **M1 — Discrepancy Analysis**
-  ```bash
-  python -m app_reviews_pipeline.M1_Discrepancy.discrepancy
-  ```
-
-- **M2 — ABSA + Recommendation Mining**
-  ```bash
-  python -m app_reviews_pipeline.M2_Absa_recommendation.absa_recommendation
-  ```
-
-- **M3 — Topic Modeling (BERTopic + LLM labels)**
-  ```bash
-  python -m app_reviews_pipeline.M3_Topic_modeling.topic_modeling
-  ```
-
-- **M4 — RAG QA**
-  ```bash
-  python -m app_reviews_pipeline.M4_Rag_qa.rag_qa     --input data/processed/spotify_clean.csv     --cache-dir outputs/rag_cache
-  ```
+**Note:** you can also run individual modules.
 
 ---
 
