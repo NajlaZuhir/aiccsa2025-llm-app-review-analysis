@@ -94,9 +94,16 @@ aiccsa2025-llm-app-review-analysis/      # Repository root
 │   │   └── __init__.py
 │   │
 │   └── M4_Rag_qa/
-│       ├── rag_qa.py                    # RAG-based Q&A
-│       ├── rag_prompt.py                # RAG prompts/templates
-│       └── __init__.py
+│   │   ├── rag_qa.py                    # RAG-based Q&A
+│   │   ├── rag_prompt.py                # RAG prompts/templates
+│   │   └── __init__.py
+│   │
+│   ├── outputs/
+│       ├── absa/
+│       ├── discrepancy/
+│       ├── topic_modeling/
+│       ├── rag_cache/
+│       └── prompt_dumps/
 │
 ├── data/
 │   ├── raw/
@@ -108,13 +115,6 @@ aiccsa2025-llm-app-review-analysis/      # Repository root
 │       ├── spotify_clean.csv
 │       ├── google_play_clean.csv
 │       └── *_stats.json                 # Dataset statistics
-│
-├── outputs/
-│   ├── absa/
-│   ├── discrepancy/
-│   ├── topic_modeling/
-│   ├── rag_cache/
-│   └── prompt_dumps/
 │
 ├── .env
 ├── requirements.txt
