@@ -14,7 +14,8 @@ Star ratings alone rarely reflect the full story in review text. Our LLM-based f
 - **Capturing linguistic nuances** (hedging, sarcasm, contrastive praise/critique).
 - **Providing actionable feedback** for product teams.
 - **Enabling interactive analysis** through evidence-grounded Q&A.
-
+  
+[paper (AICCSA 2025)](https://example.org/paper.pdf)
 ---
 
 ## 🧩 Framework Overview
