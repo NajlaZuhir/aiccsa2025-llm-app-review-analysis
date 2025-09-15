@@ -93,7 +93,7 @@ aiccsa2025-llm-app-review-analysis/      # Repository root
 │   │   ├── topic_prompts.py             # Topic labeling prompts
 │   │   └── __init__.py
 │   │
-│   └── M4_Rag_qa/
+│   ├── M4_Rag_qa/
 │   │   ├── rag_qa.py                    # RAG-based Q&A
 │   │   ├── rag_prompt.py                # RAG prompts/templates
 │   │   └── __init__.py
