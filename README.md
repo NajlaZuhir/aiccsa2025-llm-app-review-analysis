@@ -134,7 +134,7 @@ aiccsa2025-llm-app-review-analysis/      # Repository root
 ### 1) 🧹 Data Preprocessing
 Clean and normalize any dataset placed under `data/raw/`:
 ```bash
-python app_reviews_pipeline/preprocessing.py   --dataset aware   # options: aware | spotify | google_play
+python app_reviews_pipeline/preprocessing.py
 ```
 **Output:** Clean CSVs in `data/processed/` + summary stats in `*_stats.json`.
 
@@ -152,17 +152,17 @@ python app_reviews_pipeline/run_pipeline.py
 
 - **M1 — Discrepancy Analysis**
   ```bash
-  python -m app_reviews_pipeline.M1_Discrepancy.discrepancy     --input data/processed/aware_clean.csv     --outdir outputs/discrepancy
+  python -m app_reviews_pipeline.M1_Discrepancy.discrepancy
   ```
 
 - **M2 — ABSA + Recommendation Mining**
   ```bash
-  python -m app_reviews_pipeline.M2_Absa_recommendation.absa_recommendation     --input data/processed/spotify_clean.csv     --provider openai --model gpt-4o     --outdir outputs/absa
+  python -m app_reviews_pipeline.M2_Absa_recommendation.absa_recommendation
   ```
 
 - **M3 — Topic Modeling (BERTopic + LLM labels)**
   ```bash
-  python -m app_reviews_pipeline.M3_Topic_modeling.topic_modeling     --input data/processed/google_play_clean.csv     --nr-topics 20 --embedding-model all-mpnet-base-v2     --outdir outputs/topic_modeling
+  python -m app_reviews_pipeline.M3_Topic_modeling.topic_modeling
   ```
 
 - **M4 — RAG QA**
