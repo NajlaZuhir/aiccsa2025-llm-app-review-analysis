@@ -170,3 +170,4 @@ python app_reviews_pipeline/run_pipeline.py
 - Put your raw CSVs in `data/raw/`.  
 - Preprocessing writes cleaned files to `data/processed/`.  
 - Ensure `.env` is configured before running LLM-dependent modules.
+- Feedback and contributions are welcome.
