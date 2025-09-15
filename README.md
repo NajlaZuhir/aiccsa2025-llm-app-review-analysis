@@ -212,25 +212,6 @@ Select a provider/model at runtime (interactive) or via CLI flags where supporte
 
 ---
 
-## 🙌 Citation
-
-If you use this framework, please cite:
-
-```bibtex
-@inproceedings{BeyondStars2025,
-  title     = {Beyond Stars: Bridging the Gap Between Ratings and Review Sentiment with LLM},
-  booktitle = {AICCSA},
-  year      = {2025},
-  author    = {<Your Author List>}
-}
-```
-
----
-
-## 📄 License
-
-Add your license of choice (e.g., MIT) in `LICENSE`.
-
 ---
 
 ## 💡 Notes
