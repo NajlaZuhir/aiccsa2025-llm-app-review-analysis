@@ -49,23 +49,13 @@ Star ratings alone rarely reflect the full story in review text. Our LLM-based f
 
 ## 🚀 Quick Start
 
-### Prerequisites
-- Python **3.8+**
-- API keys for your chosen LLM providers
-
 ### Installation
 
 1) **Clone the repository**
-```bash
-git clone https://github.com/<your-org>/aiccsa2025-llm-app-review-analysis.git
-cd aiccsa2025-llm-app-review-analysis
-```
-
 2) **Install dependencies**
 ```bash
 pip install -r requirements.txt
 ```
-
 3) **Set environment variables**  
 Create a `.env` in the project root:
 ```env
@@ -92,6 +82,7 @@ aiccsa2025-llm-app-review-analysis/      # Repository root
 │   │
 │   ├── M1_Discrepancy/
 │   │   ├── discrepancy.py               # VADER sentiment & discrepancy detection
+│   │   ├── discrepancy_plots.ipynb      # Notebook version
 │   │   └── __init__.py
 │   │
 │   ├── M2_Absa_recommendation/
@@ -209,8 +200,6 @@ Select a provider/model at runtime (interactive) or via CLI flags where supporte
 - **Practical Value:** Actionable, feature-level insights beyond star ratings.  
 - **Methodological Innovation:** Structured prompting with automated optimization.  
 - **Scalability:** Robust from small samples to tens of thousands of reviews.
-
----
 
 ---
 
