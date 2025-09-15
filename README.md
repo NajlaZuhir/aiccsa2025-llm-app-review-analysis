@@ -39,8 +39,8 @@ Star ratings alone rarely reflect the full story in review text. Our LLM-based f
 - **Unified Interface** — seamless provider switching via a standardized `ChatFn` interface
 
 ### Multi-Dataset Validation
-- Evaluated on three heterogeneous app review corpora: [AWARE](https://zenodo.org/records/5528481), [Google Play](https://www.kaggle.com/datasets/prakharrathi25/google-play-store-reviews) and[Spotify](https://www.kaggle.com/datasets/ashishkumarak/spotify-reviews-playstore-daily-update)
-**Scalable** from small samples to **80K+** reviews with intelligent caching
+- Evaluated on three heterogeneous app review corpora: [AWARE](https://zenodo.org/records/5528481), [Google Play](https://www.kaggle.com/datasets/prakharrathi25/google-play-store-reviews) and [Spotify](https://www.kaggle.com/datasets/ashishkumarak/spotify-reviews-playstore-daily-update)
+- **Scalable** from small samples to **80K+** reviews with intelligent caching
 
 ---
 
