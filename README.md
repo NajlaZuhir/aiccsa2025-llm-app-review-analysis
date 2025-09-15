@@ -42,8 +42,10 @@ Star ratings alone rarely reflect the full story in review text. Our LLM-based f
 
 ### Multi-Dataset Validation
 
-- Evaluated on **AWARE**, **Google Play (https://www.kaggle.com/datasets/prakharrathi25/google-play-store-reviews)**, and **Spotify** review corpora  
-- **Scalable** from small samples to **80K+** reviews with intelligent caching
+- Evaluated on [AWARE](https://zenodo.org/records/5528481), 
+  [Google Play](https://www.kaggle.com/datasets/prakharrathi25/google-play-store-reviews), 
+  and [Spotify](https://www.kaggle.com/datasets/ashishkumarak/spotify-reviews-playstore-daily-update) review corpora
+  - **Scalable** from small samples to **80K+** reviews with intelligent caching
 
 ---
 
