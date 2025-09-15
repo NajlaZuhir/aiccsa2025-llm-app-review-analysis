@@ -2,145 +2,60 @@
 
 **Research Implementation for AICCSA 2025**
 
-This repository contains the complete implementation of research paper "Beyond Stars: Bridging the Gap Between Ratings and Review Sentiment with LLM" published in AICCSA 2025. 
-The framework addresses the fundamental limitations of traditional star-rating systems by developing an advanced LLM-based approach to app review analysis that captures nuanced feedback often missed by numeric ratings alone.
+This repository contains the implementation for the paper **“Beyond Stars: Bridging the Gap Between Ratings and Review Sentiment with LLM”** (AICCSA 2025). The framework addresses the limits of traditional star-rating systems by using Large Language Models (LLMs) to capture nuanced feedback that numeric ratings often miss.
 
-## Research Objectives
+---
 
-Our research tackles the critical challenge that **star ratings fail to represent the nuanced feedback present in review texts**. While a 5-star rating appears positive, the accompanying text might reveal significant concerns about specific app features. Our LLM framework bridges this gap by:
+## 🎯 Research Objectives
 
-- **Extracting Rich Insights**
-- **Capturing Linguistic Nuances**
-- **Providing Actionable Feedback**
-- **Enabling Interactive Analysis**
+Star ratings alone rarely reflect the full story in review text. Our LLM-based framework bridges this gap by:
 
-## Framework Description:
-Core Architecture: The framework is a modular, hybrid multi-stage pipeline where each component can operate independently or together. It combines traditional NLP baselines with advanced LLM techniques for comprehensive app review analysis.
-- **M1 - Discrepancy Analysis (Baseline)** - Uses VADER sentiment analyzer to quantify misalignment between star ratings and review text sentiment by mapping VADER scores to 1-5 star scale and computing absolute differences.
-- **M2 - ABSA with Recommendation Mining** - Employs structured prompting with domain-specific examples to extract aspect-sentiment-recommendation triples.
-- **M3 - LLM-Enhanced Topic Modeling** - Combines BERTopic clustering with intelligent LLM-generated topic labels and summaries from keyword clusters.
-- **M4 - RAG-Based Conversational QA**: Interactive evidence-backed conversational question answering over large review datasets.
+- **Extracting rich insights** from free-form reviews (aspects, sentiments, recommendations).
+- **Capturing linguistic nuances** (hedging, sarcasm, contrastive praise/critique).
+- **Providing actionable feedback** for product teams.
+- **Enabling interactive analysis** through evidence-grounded Q&A.
+
+---
+
+## 🧩 Framework Overview
+
+**Core Architecture.** A modular, hybrid multi-stage pipeline where each component runs independently or as an end-to-end system, combining traditional NLP baselines with advanced LLM techniques.
+
+- **M1 — Discrepancy Analysis (Baseline):**  
+  VADER-based sentiment → mapped to 1–5 scale → absolute difference vs. star rating.
+
+- **M2 — ABSA + Recommendation Mining:**  
+  Structured prompting with domain examples to extract **(aspect, sentiment, recommendation)** triples.
+
+- **M3 — LLM-Enhanced Topic Modeling:**  
+  BERTopic for clusters, with LLM-generated topic **labels** and **summaries**.
+
+- **M4 — RAG-Based Conversational QA:**  
+  Interactive, **evidence-backed** question answering over large review sets.
 
 ### Multi-LLM Architecture
-- **GPT-4/4o**: Primary model for complex reasoning and structured outputs
-- **LLaMA 2 7B-chat**: Open-source alternative for accessibility and comparison
-- **Mistral 7B**: High-performance model with efficient resource usage
-- **Unified Interface**: Seamless switching between providers via standardized ChatFn interface
 
+- **GPT-4 / GPT-4o** — primary for complex reasoning & structured outputs  
+- **LLaMA-2-7B-chat** — open-source alternative for accessibility & comparison  
+- **Mistral-7B** — efficient, high-quality responses  
+- **Unified Interface** — seamless provider switching via a standardized `ChatFn` interface
 
-### Multi-Dataset Validation**: 
-- Tested on AWARE, Google Play, and Spotify review corpora
-- **Scalable Architecture**: Handles datasets from samples to 80K+ reviews with intelligent caching
+### Multi-Dataset Validation
+
+- Evaluated on **AWARE**, **Google Play**, and **Spotify** review corpora  
+- **Scalable** from small samples to **80K+** reviews with intelligent caching
+
+---
 
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Python 3.8+
-- API keys for your chosen LLM provider(s)
+- Python **3.8+**
+- API keys for your chosen LLM providers
 
 ### Installation
 
-1. **Clone the repository:**
-2. **Install dependencies
-3. **Set up environment variables:**
-Create a `.env` file in the root directory with Poviders API (OPENAI_API_KEY, MISTRAL_API_KEY, LLAMA_API_KEY)
-
-## 📁 Project Structure
-
-aiccsa2025-llm-app-review-analysis/      # Repository root
-│
-├── app_reviews_pipeline/             # Main pipeline package
-│   ├── __init__.py
-│   ├── llm_config.py                # Multi-provider LLM configuration
-│   ├── preprocessing.py             # Data cleaning and preparation
-│   ├── prompt_optimize.py           # Automated prompt optimization
-│   ├── quality_judge.py             # LLM output quality evaluation
-│   ├── run_pipeline.py              # Main pipeline orchestration
-│   ├── user_selection.py            # Interactive CLI utilities
-│   │
-│   ├── M1_Discrepancy/              # Module 1: Statistical Analysis
-│   │   ├── discrepancy.py           # VADER sentiment & discrepancy detection
-│   │   └── __init__.py
-│   │
-│   ├── M2_Absa_recommendation/      # Module 2: ABSA & Recommendations
-│   │   ├── absa_recommendation.py   # Main ABSA pipeline
-│   │   ├── absa_prompts.py          # ABSA-specific prompts
-│   │   ├── absa_LLM_helpers.py      # ABSA utility functions
-│   │   └── __init__.py
-│   │
-│   ├── M3_Topic_modeling/           # Module 3: Topic Discovery
-│   │   ├── topic_modeling.py        # BERTopic + LLM labeling
-│   │   ├── topic_prompts.py         # Topic labeling prompts
-│   │   └── __init__.py
-│   │
-│   └── M4_Rag_qa/                  # Module 4: Question Answering
-│       ├── rag_qa.py               # RAG-based Q&A system
-│       ├── rag_prompt.py           # RAG prompts and templates
-│       ├── rag_qus_samples.txt     # Sample questions
-│       └── __init__.py
-│
-├── data/                            # Data storage
-│   ├── raw/                        # Original datasets
-│   │   ├── AWARE_Comprehensive.csv
-│   │   ├── spotify_reviews.csv
-│   │   └── google_play_reviews.csv
-│   └── processed/                  # Cleaned datasets
-│       ├── aware_clean.csv
-│       ├── spotify_clean.csv
-│       ├── google_play_clean.csv
-│       └── *_stats.json            # Dataset statistics
-│
-├── outputs/                        # Analysis results
-│   ├── absa/                       # ABSA analysis outputs
-│   ├── discrepancy/                # Statistical analysis results
-│   ├── topic_modeling/             # Topic models and labels
-│   ├── rag_cache/                  # RAG embeddings and indices
-│   └── prompt_dumps/               # Optimized prompts
-│
-│
-├── .env                            # Environment variables
-├── requirements.txt                # Python dependencies
-└── README                          # This file
-```
-
-## 🎮 Usage Guide
-
-### 1. 🧹 Data Preprocessing
-
-First, clean and prepare your review dataset stored in data folder by app_reviews_pipeline/ running preprocessing.py
-
-
-
-**Output:** Clean CSV files in `data/processed/` with statistics summaries.
-
-**Interactive Flow:**
-1. Choose dataset (AWARE, Spotify, Google Play)
-2. Select LLM provider and model
-3. Set sample size or use full dataset
-
-
-
-### LLM Provider Setup
-
-The framework supports multiple LLM providers through a unified interface:
-
-```python
-# llm_config.py
-providers = {
-    'openai': ['gpt-4o', 'gpt-4o-mini', 'gpt-3.5-turbo'],
-    'mistral': ['mistral-large', 'mistral-medium'],
-    'llama2': ['llama-2-70b', 'llama-2-13b']
-}
-```
-
-### 🎯 Research Impact
-- **Academic Contribution**: Novel LLM framework surpassing fine-tuned transformer baselines
-- **Practical Value**: Actionable insights for app developers beyond star ratings
-- **Methodological Innovation**: Structured prompting approach with automated optimization
-- **Scalable Solution**: Framework applicable across different app domains and review platforms
-
-
-
-## 📚 Citation
-
-If you use this framework in your research, please cite our AICCSA 2025 paper:
+1) **Clone the repository**
+```bash
+git clone https://github.com/<your-org>/aiccsa2025-llm-app-review-analysis.git
+cd aiccsa2025-llm-app-review-analysis
