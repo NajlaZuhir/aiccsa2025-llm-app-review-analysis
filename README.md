@@ -1,7 +1,5 @@
 # Beyond Stars: Bridging the Gap Between Ratings and Review Sentiment with LLM
 
-**Research Implementation for AICCSA 2025**
-
 This repository contains the implementation for the paper **“Beyond Stars: Bridging the Gap Between Ratings and Review Sentiment with LLM”** (AICCSA 2025). The framework addresses the limits of traditional star-rating systems by using Large Language Models (LLMs) to capture nuanced feedback that numeric ratings often miss.
 
 ---
@@ -41,10 +39,10 @@ Star ratings alone rarely reflect the full story in review text. Our LLM-based f
 - **Unified Interface** — seamless provider switching via a standardized `ChatFn` interface
 
 ### Multi-Dataset Validation
-
-- Evaluated on [AWARE](https://zenodo.org/records/5528481), 
-  [Google Play](https://www.kaggle.com/datasets/prakharrathi25/google-play-store-reviews), 
-  and [Spotify](https://www.kaggle.com/datasets/ashishkumarak/spotify-reviews-playstore-daily-update) review corpora
+Evaluated on three heterogeneous corpora
+- [AWARE](https://zenodo.org/records/5528481)
+- [Google Play](https://www.kaggle.com/datasets/prakharrathi25/google-play-store-reviews)
+- [Spotify](https://www.kaggle.com/datasets/ashishkumarak/spotify-reviews-playstore-daily-update) review corpora
   - **Scalable** from small samples to **80K+** reviews with intelligent caching
 
 ---
@@ -101,7 +99,6 @@ aiccsa2025-llm-app-review-analysis/      # Repository root
 │   └── M4_Rag_qa/
 │       ├── rag_qa.py                    # RAG-based Q&A
 │       ├── rag_prompt.py                # RAG prompts/templates
-│       ├── rag_qus_samples.txt          # Sample questions
 │       └── __init__.py
 │
 ├── data/
@@ -138,7 +135,7 @@ python app_reviews_pipeline/preprocessing.py
 ```
 **Output:** Clean CSVs in `data/processed/` + summary stats in `*_stats.json`.
 
-### 2) ▶️ Run the full pipeline (Interactive Flow)
+### 2) ▶️ Run the full pipeline
 ```bash
 python app_reviews_pipeline/run_pipeline.py
 ```
@@ -148,7 +145,7 @@ python app_reviews_pipeline/run_pipeline.py
 3. Select LLM provider and model  
 4. Set sample size or use full dataset
    
-**Note:** you can also run individual modules.
+**Note:** you can also run the modules individually.
 
 ---
 
@@ -164,7 +161,7 @@ python app_reviews_pipeline/run_pipeline.py
 
 ## 🧪 Research Impact
 
-- **Academic Contribution:** LLM framework surpassing traditional baselines on nuanced opinion mining.  
+- **Academic Contribution:** LLM framework surpassing traditional baselines.  
 - **Practical Value:** Actionable, feature-level insights beyond star ratings.  
 - **Methodological Innovation:** Structured prompting with automated optimization.  
 - **Scalability:** Robust from small samples to tens of thousands of reviews.
