@@ -14,8 +14,7 @@ Star ratings alone rarely reflect the full story in review text. Our LLM-based f
 - **Capturing linguistic nuances** (hedging, sarcasm, contrastive praise/critique).
 - **Providing actionable feedback** for product teams.
 - **Enabling interactive analysis** through evidence-grounded Q&A.
-  
-[paper (AICCSA 2025)](https://example.org/paper.pdf)
+
 ---
 
 ## 🧩 Framework Overview
@@ -43,7 +42,7 @@ Star ratings alone rarely reflect the full story in review text. Our LLM-based f
 
 ### Multi-Dataset Validation
 
-- Evaluated on **AWARE**, **Google Play**, and **Spotify** review corpora  
+- Evaluated on **AWARE**, **Google Play (https://www.kaggle.com/datasets/prakharrathi25/google-play-store-reviews)**, and **Spotify** review corpora  
 - **Scalable** from small samples to **80K+** reviews with intelligent caching
 
 ---
