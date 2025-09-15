@@ -143,9 +143,10 @@ python app_reviews_pipeline/preprocessing.py
 python app_reviews_pipeline/run_pipeline.py
 ```
 **Interactive Flow:**
-1. Choose dataset (AWARE, Spotify, Google Play)  
-2. Select LLM provider and model  
-3. Set sample size or use full dataset
+1. Select one of the four Modules (M1-M4)
+2. Choose dataset (AWARE, Spotify, Google Play)  
+3. Select LLM provider and model  
+4. Set sample size or use full dataset
    
 **Note:** you can also run individual modules.
 
