@@ -98,12 +98,10 @@ aiccsa2025-llm-app-review-analysis/      # Repository root
 │   │   ├── rag_prompt.py                # RAG prompts/templates
 │   │   └── __init__.py
 │   │
-│   └── outputs/
+│   └── outputs/                         # Rag outputs in the terminal
 │       ├── absa/
 │       ├── discrepancy/
-│       ├── topic_modeling/
-│       ├── rag_cache/
-│       └── prompt_dumps/
+│       └── topic_modeling/
 │
 ├── data/
 │   ├── raw/
