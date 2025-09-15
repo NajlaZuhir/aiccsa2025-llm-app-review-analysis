@@ -35,9 +35,9 @@ Star ratings alone rarely reflect the full story in review text. Our LLM-based f
 
 ### Multi-LLM Architecture
 
-- **GPT-4 / GPT-4o** — primary for complex reasoning & structured outputs  
-- **LLaMA-2-7B-chat** — open-source alternative for accessibility & comparison  
-- **Mistral-7B** — efficient, high-quality responses  
+- **openai** — primary for complex reasoning & structured outputs  
+- **LLaMA-2** — open-source alternative for accessibility & comparison  
+- **Mistral** — efficient, high-quality responses  
 - **Unified Interface** — seamless provider switching via a standardized `ChatFn` interface
 
 ### Multi-Dataset Validation
@@ -66,7 +66,7 @@ LLAMA_API_KEY=...
 
 ---
 
-## 📁 Project Structure
+## 📁 Core Architecture (Project Structure)
 
 ```
 aiccsa2025-llm-app-review-analysis/      # Repository root
@@ -167,20 +167,6 @@ python app_reviews_pipeline/run_pipeline.py
   ```bash
   python -m app_reviews_pipeline.M4_Rag_qa.rag_qa     --input data/processed/spotify_clean.csv     --cache-dir outputs/rag_cache
   ```
-
----
-
-## 🔧 LLM Provider Setup
-
-Providers and models are declared in `llm_config.py`:
-```python
-providers = {
-    'openai':  ['gpt-4o', 'gpt-4o-mini', 'gpt-3.5-turbo'],
-    'mistral': ['mistral-large', 'mistral-medium'],
-    'llama2':  ['llama-2-70b', 'llama-2-13b']
-}
-```
-Select a provider/model at runtime (interactive) or via CLI flags where supported.
 
 ---
 
