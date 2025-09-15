@@ -97,9 +97,6 @@ aiccsa2025-llm-app-review-analysis/      # Repository root
 │   ├── rag_cache/                  # RAG embeddings and indices
 │   └── prompt_dumps/               # Optimized prompts
 │
-├── additional_analysis/            # notebooks
-│   ├── ABSA_with_SOTA_model.ipynb
-│   └── review_discrepancy_plots.ipynb
 │
 ├── .env                            # Environment variables
 ├── requirements.txt                # Python dependencies
