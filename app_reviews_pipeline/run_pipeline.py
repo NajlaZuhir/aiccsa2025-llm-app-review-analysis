@@ -21,7 +21,7 @@ for sub in ["M1_Discrepancy", "M2_Absa_recommendation", "M3_Topic_modeling", "M4
 # Module Entrypoints
 # ===========================
 from M1_Discrepancy.discrepancy import main as run_discrepancy   # type: ignore
-from app_reviews_pipeline.M2_Absa_recommendation.absa_recommendation import main as run_absa  # type: ignore
+from M2_Absa_recommendation.absa_recommendation import main as run_absa  # type: ignore
 from M3_Topic_modeling.topic_modeling import main as run_topic   # type: ignore
 from M4_Rag_qa.rag_qa import main as run_rag                     # type: ignore
 
@@ -88,3 +88,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
