@@ -93,15 +93,11 @@ aiccsa2025-llm-app-review-analysis/      # Repository root
 │   │   ├── topic_prompts.py             # Topic labeling prompts
 │   │   └── __init__.py
 │   │
-│   ├── M4_Rag_qa/
-│   │   ├── rag_qa.py                    # RAG-based Q&A
-│   │   ├── rag_prompt.py                # RAG prompts/templates
-│   │   └── __init__.py
-│   │
-│   └── outputs/                         # Rag outputs in the terminal
-│       ├── absa/
-│       ├── discrepancy/
-│       └── topic_modeling/
+│   └── M4_Rag_qa/
+│       ├── rag_qa.py                    # RAG-based Q&A
+│       ├── rag_prompt.py                # RAG prompts/templates
+│       └── __init__.py
+│   
 │
 ├── data/
 │   ├── raw/
@@ -149,9 +145,8 @@ python app_reviews_pipeline/run_pipeline.py
 - **`outputs/discrepancy/`** — per-review sentiment, mapped scores, and rating/text gaps  
 - **`outputs/absa/`** — extracted triples `(aspect, sentiment, recommendation)`  
 - **`outputs/topic_modeling/`** — cluster labels, summaries, visualizations  
-- **`outputs/rag_cache/`** — embeddings and indices for QA  
-- **`outputs/prompt_dumps/`** — auto-optimized prompts for reproducibility
-
+- **`Rag outputs:`** —  in the terminal
+**Note:** outputs folder gets created in the pipeline folder 
 ---
 
 ## 🧪 Research Impact
