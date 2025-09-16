@@ -97,7 +97,6 @@ aiccsa2025-llm-app-review-analysis/      # Repository root
 │       ├── rag_qa.py                    # RAG-based Q&A
 │       ├── rag_prompt.py                # RAG prompts/templates
 │       └── __init__.py
-│   
 │
 ├── data/
 │   ├── raw/
