@@ -145,6 +145,7 @@ python app_reviews_pipeline/run_pipeline.py
 - **`outputs/absa/`** — extracted triples `(aspect, sentiment, recommendation)`  
 - **`outputs/topic_modeling/`** — cluster labels, summaries, visualizations  
 - **`Rag outputs:`** —  in the terminal
+  
 **Note:** outputs folder gets created in the pipeline folder 
 ---
 
