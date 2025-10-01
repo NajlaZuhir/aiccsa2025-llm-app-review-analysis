@@ -1,6 +1,6 @@
 # Beyond Stars: Bridging the Gap Between Ratings and Review Sentiment with LLM
 
-This repository contains the implementation for the paper **[Beyond Stars: Bridging the Gap Between Ratings and Review Sentiment with LLM](https://arxiv.org/pdf/2509.20953v1)** accepted to [AICCSA 2025](https://lnkd.in/gUzgpBZd). The framework addresses the limits of traditional star-rating systems by using Large Language Models (LLMs) to capture nuanced feedback that numeric ratings often miss.
+This repository contains the implementation for the paper **[Beyond Stars: Bridging the Gap Between Ratings and Review Sentiment with LLM](https://arxiv.org/pdf/2509.20953v1)** accepted to **[AICCSA 2025](https://lnkd.in/gUzgpBZd)**. The framework addresses the limits of traditional star-rating systems by using Large Language Models (LLMs) to capture nuanced feedback that numeric ratings often miss.
 
 ---
 
