@@ -33,9 +33,9 @@ Star ratings alone rarely reflect the full story in review text. Our LLM-based f
 
 ### Multi-LLM Architecture
 
-- **openai** — primary for complex reasoning & structured outputs  
-- **LLaMA-2** — open-source alternative for accessibility & comparison  
-- **Mistral** — efficient, high-quality responses  
+- **OpenAI** — primary for complex reasoning & structured outputs  
+- **Llama 2** — open-source alternative for accessibility & comparison  
+- **Mistral AI** — efficient, high-quality responses  
 - **Unified Interface** — seamless provider switching via a standardized `ChatFn` interface
 
 ### Multi-Dataset Validation
