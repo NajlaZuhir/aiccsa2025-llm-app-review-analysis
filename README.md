@@ -16,13 +16,10 @@ Star ratings alone rarely reflect the full story in review text. Our LLM-based f
 ---
 
 ## 🧩 Framework Overview
-
-
-
+**Proposed Modular Framework for LLM-Based Sentiment Analysis**
+![Proposed Modular Framework for LLM-Based Sentiment Analysis](framework.png)
 
 **Core Architecture.** A modular, hybrid multi-stage pipeline where each component runs independently or as an end-to-end system, combining traditional NLP baselines with advanced LLM techniques.
-
-![Proposed Modular Framework for LLM-Based Sentiment Analysis](framework.png)
 
 - **M1 — Discrepancy Analysis (Baseline):**  
   VADER-based sentiment → mapped to 1–5 scale → absolute difference vs. star rating.
