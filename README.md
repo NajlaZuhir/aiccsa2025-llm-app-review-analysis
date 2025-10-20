@@ -17,8 +17,7 @@ Star ratings alone rarely reflect the full story in review text. Our LLM-based f
 
 ## 🧩 Framework Overview
 
-![Proposed Modular Framework for LLM-Based Sentiment Analysis](aiccsa2025-llm-app-review-analysis
-/framework.png)
+![Proposed Modular Framework for LLM-Based Sentiment Analysis](framework.png)
 
 
 **Core Architecture.** A modular, hybrid multi-stage pipeline where each component runs independently or as an end-to-end system, combining traditional NLP baselines with advanced LLM techniques.
